@@ -7,7 +7,8 @@ public class Complejo {
 
     /* Constructores */
     public Complejo( ) {
-
+        this.dPReal = 0;
+        this.dPImag = 0;
     }
 
     public Complejo(double dPReal, double dPImag) {
