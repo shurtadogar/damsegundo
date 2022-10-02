@@ -33,16 +33,15 @@ public class Complejo {
     public void setdPImag(double dPImag) {
         this.dPImag = dPImag;
     }
-
-    /* Metodos */
-    
-    /* asignar(double x, double y) asignar valores a los complejos */
+   
+    /* Método asignar(double x, double y) asignar valores a los complejos */
     public void asignar(double x, double y)
     {
         this.dPReal = x;
         this.dPImag = y;
     };
-    /* sumar(Complejo c1, Complejo c2) sumar valores de complejos */
+
+    /* Método sumar(Complejo c1, Complejo c2) sumar valores de complejos */
     public Complejo sumar(Complejo c1, Complejo c2){
         double x = c1.dPReal + c2.dPReal;
         double y = c1.dPImag + c2.dPImag;
@@ -50,14 +49,15 @@ public class Complejo {
         c3.asignar(x, y);
         return c3;
     };
-    /*  imprimir() imprimimos los datos del complejo */
+
+    /* Método imprimir() imprimimos los datos del complejo */
     public void imprimir () {
        System.out.println("Datos del complejo: ("+getdPReal()+", "+getdPImag()+")");
     }
 
+    /* Método toString() */
     @Override
     public String toString() {
         return "Complejo [dPReal=" + dPReal + ", dPImag=" + dPImag + "]";
     };
 }
-
