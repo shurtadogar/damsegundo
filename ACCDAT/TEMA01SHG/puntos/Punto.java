@@ -2,8 +2,8 @@ package TEMA01SHG.puntos;
 
 public class Punto {
     /* Atributos (X) (Y)*/
-    private int iX;
-    private int iY;
+    protected int iX;
+    protected int iY;
     
     /* Constructor por defecto da valores de 0 a los atributos */
     public Punto() {
@@ -43,7 +43,17 @@ public class Punto {
         return iDistancia;
     }
 
-    
+    /* Metodo equals() */
+    @Override
+    public boolean equals(Object obj) {
+        Punto p2 = (Punto) obj;
+        if (p2.getiX() != this.iX || p2.getiY() != this.iY){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 
     /* Método toString() */
     @Override
