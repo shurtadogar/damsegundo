@@ -1,48 +1,69 @@
-package entregashg.puntos;
+package entregashg.tienda;
 
-public class Punto {
+public class Ordenadores {
     /* Atributos */
-    private int x;
-    private int y;
-    
-    /* Constructores */
-    public Punto() {
-        this.x = 0;
-        this.y = 0;
+    private String sCodigo;
+    private int iRam;
+    private String sCpu;
+    private double dPrecio;
+    /* Constructores */  
+    public Ordenadores() {
+        this.sCodigo = null;
+        this.iRam = 0;
+        this.sCpu = null;
+        this.dPrecio = 0.0;
     }
 
-    public Punto(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Ordenadores(String sCodigo, int iRam, String sCpu, double dPrecio) {
+        this.sCodigo = sCodigo;
+        this.iRam = iRam;
+        this.sCpu = sCpu;
+        this.dPrecio = dPrecio;
     }
     /* Getters */
-    public int getX() {
-        return x;
+    public String getsCodigo() {
+        return sCodigo;
     }
 
-    public int getY() {
-        return y;
+    public int getiRam() {
+        return iRam;
+    }
+
+    public String getsCpu() {
+        return sCpu;
+    }
+
+    public double getdPrecio() {
+        return dPrecio;
     }
     /* Setters */
-    public void setX(int x) {
-        this.x = x;
+    public void setsCodigo(String sCodigo) {
+        this.sCodigo = sCodigo;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setiRam(int iRam) {
+        this.iRam = iRam;
     }
-    
+
+    public void setsCpu(String sCpu) {
+        this.sCpu = sCpu;
+    }
+
+    public void setdPrecio(double dPrecio) {
+        this.dPrecio = dPrecio;
+    }
     /* Metodos */
-    public double distanciaPuntos(Punto p1, Punto p2){
-        double iDistancia;
-        int x = p2.getX() - p1.getX();
-        int y = p2.getY() - p1.getY();
-        iDistancia = Math.sqrt(x*x + y*y);
-        return iDistancia;
+    public void getCarateristicas(){
+        System.out.println("Las caracteristicas del PC son: ");
+        System.out.println("Codigo: "+getsCodigo());
+        System.out.println("RAM: "+getiRam());
+        System.out.println("CPU: "+getsCpu());
+        System.out.println("Precio: "+getdPrecio());
     }
 
     @Override
     public String toString() {
-        return "Punto [x=" + x + ", y=" + y + "]";
+        return "Ordenadores [sCodigo=" + sCodigo + ", iRam=" + iRam + ", sCpu=" + sCpu + ", dPrecio=" + dPrecio + "]";
     }
 }
+
