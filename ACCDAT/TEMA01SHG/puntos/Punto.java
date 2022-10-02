@@ -43,7 +43,7 @@ public class Punto {
         return iDistancia;
     }
 
-    /* Metodo equals() */
+    /* Método equals() para Punto teniendo en cuenta que dos puntos son iguales si todas sus coordenadas son iguales.*/
     @Override
     public boolean equals(Object obj) {
         Punto p2 = (Punto) obj;
