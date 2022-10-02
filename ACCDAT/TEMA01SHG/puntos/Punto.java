@@ -1,48 +1,51 @@
 package entregashg.puntos;
 
 public class Punto {
-    /* Atributos */
-    private int x;
-    private int y;
+    /* Atributos (X) (Y)*/
+    private int iX;
+    private int iY;
     
-    /* Constructores */
+    /* Constructor por decto da valores de 0 a los atributos */
     public Punto() {
-        this.x = 0;
-        this.y = 0;
+        this.iX = 0;
+        this.iY = 0;
     }
-
-    public Punto(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
+    /* Constructor recibiendo por parametros los valores */
+    public Punto(int paramiX, int paramiY) {
+        this.iX = paramiX;
+        this.iY = paramiY;
     }
     
-    /* Metodos */
-    public double distanciaPuntos(Punto p1, Punto p2){
+    /* Getters */
+    public int getiX() {
+        return iX;
+    }
+
+    public int getiY() {
+        return iY;
+    }
+
+    /* Setters */
+    public void setiX(int paramiX) {
+        this.iX = paramiX;
+    }
+
+    public void setiY(int paramiY) {
+        this.iY = paramiY;
+    }
+
+    /* Método distancia(Punto otroPunto) que devuelve la distancia a otro punto que se le pasa como parámetro. */
+    public double distancia(Punto p1, Punto p2){
         double iDistancia;
-        int x = p2.getX() - p1.getX();
-        int y = p2.getY() - p1.getY();
+        int x = p2.getiX() - p1.getiX();
+        int y = p2.getiY() - p1.getiY();
         iDistancia = Math.sqrt(x*x + y*y);
         return iDistancia;
     }
 
+    /* Método toString() */
     @Override
     public String toString() {
-        return "Punto [x=" + x + ", y=" + y + "]";
+        return "Punto [x=" + iX + ", y=" + iY + "]";
     }
 }
