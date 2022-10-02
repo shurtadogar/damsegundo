@@ -6,19 +6,20 @@ public class Ordenadores {
     private int iRam;
     private String sCpu;
     private double dPrecio;
-    /* Constructores */  
+
+    /* Constructor por defecto da valores vacios a un nuevo ordenador */  
     public Ordenadores() {
         this.sCodigo = null;
         this.iRam = 0;
         this.sCpu = null;
         this.dPrecio = 0.0;
     }
-
-    public Ordenadores(String sCodigo, int iRam, String sCpu, double dPrecio) {
-        this.sCodigo = sCodigo;
-        this.iRam = iRam;
-        this.sCpu = sCpu;
-        this.dPrecio = dPrecio;
+    /* Constructor pasando por parametros los valores */ 
+    public Ordenadores(String paramsCodigo, int paramiRam, String paramsCpu, double paramdPrecio) {
+        this.sCodigo = paramsCodigo;
+        this.iRam = paramiRam;
+        this.sCpu = paramsCpu;
+        this.dPrecio = paramdPrecio;
     }
     /* Getters */
     public String getsCodigo() {
@@ -37,22 +38,22 @@ public class Ordenadores {
         return dPrecio;
     }
     /* Setters */
-    public void setsCodigo(String sCodigo) {
-        this.sCodigo = sCodigo;
+    public void setsCodigo(String paramsCodigo) {
+        this.sCodigo = paramsCodigo;
     }
 
-    public void setiRam(int iRam) {
-        this.iRam = iRam;
+    public void setiRam(int paramiRam) {
+        this.iRam = paramiRam;
     }
 
-    public void setsCpu(String sCpu) {
-        this.sCpu = sCpu;
+    public void setsCpu(String paramsCpu) {
+        this.sCpu = paramsCpu;
     }
 
-    public void setdPrecio(double dPrecio) {
-        this.dPrecio = dPrecio;
+    public void setdPrecio(double paramdPrecio) {
+        this.dPrecio = paramdPrecio;
     }
-    /* Metodos */
+    /* Método getCaracterísiticas() que devuelva las propiedades de cada uno de ellos */
     public void getCarateristicas(){
         System.out.println("Las caracteristicas del PC son: ");
         System.out.println("Codigo: "+getsCodigo());
@@ -60,10 +61,9 @@ public class Ordenadores {
         System.out.println("CPU: "+getsCpu());
         System.out.println("Precio: "+getdPrecio());
     }
-
+    /* Método toString() para ver los valores */
     @Override
     public String toString() {
         return "Ordenadores [sCodigo=" + sCodigo + ", iRam=" + iRam + ", sCpu=" + sCpu + ", dPrecio=" + dPrecio + "]";
     }
 }
-
