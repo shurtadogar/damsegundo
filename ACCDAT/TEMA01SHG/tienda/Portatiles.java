@@ -3,30 +3,29 @@ package entregashg.tienda;
 public class Portatiles extends Ordenadores {
     /* Atributos */
     private double dPeso;
-    /* Constructor */
-    public Portatiles(String sCodigo, int iRam, String sCpu, double dPrecio, double dPeso) {
-        super(sCodigo, iRam, sCpu, dPrecio);
-        this.dPeso = dPeso;
+    /* Constructor recibiendo por parametros los valores */
+    public Portatiles(String paramsCodigo, int paramiRam, String paramsCpu, double paramdPrecio, double paramdPeso) {
+        super(paramsCodigo, paramiRam, paramsCpu, paramdPrecio);
+        this.dPeso = paramdPeso;
     }
     /* Getters */
     public double getdPeso() {
         return dPeso;
     }
     /* Setters */
-    public void setdPeso(double dPeso) {
-        this.dPeso = dPeso;
+    public void setdPeso(double paramdPeso) {
+        this.dPeso = paramdPeso;
     }
-    /* Metodos */
-    
+    /* Método getCaracterísiticas() heredado de Ordenadores.java*/
     @Override
-    public String getCaracterísiticas() {
+    public void getCarateristicas() {
         // TODO Auto-generated method stub
-        return super.getCaracterísiticas()+ "\nPeso "+getdPeso();
+        super.getCarateristicas();
+        System.out.println("Peso: "+getdPeso());
     }
-
+    /* Método toString() para ver los valores */
     @Override
     public String toString() {
         return "Portatiles [dPeso=" + dPeso + "]";
     }
-   
 }
