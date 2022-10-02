@@ -22,7 +22,7 @@ public class Punto3d extends Punto {
         this.iZ = paramiZ;
     }
     /* Método distancia() para puntos 3D */
-    public double distancia(Punto3d p1, Punto3d p2) {
+    public double distancia3d(Punto3d p1, Punto3d p2) {
         double distanciaPuntos;
         int x = p2.getiX() - p1.getiX();
         int y = p2.getiY() - p1.getiY();
@@ -30,8 +30,16 @@ public class Punto3d extends Punto {
         distanciaPuntos = Math.sqrt(x + y + z);
         return distanciaPuntos;
     }
-
-
+    /* Método equals() para Punto3D, teniendo en cuenta que dos puntos son iguales si todas sus coordenadas son iguales.*/
+    public boolean equals(Object obj) {
+        Punto3d p2 = (Punto3d) obj;
+        if (p2.getiX() != this.iX || p2.getiY() != this.iY || p2.getiZ() != this.iZ){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
     /* Método toString() */
     @Override
     public String toString() {
