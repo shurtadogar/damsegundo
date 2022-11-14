@@ -10,30 +10,29 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class MeteoSebastian {
-    final static String RUTA_FICHERO = "D:\\ACCDAT\\TEMA2SHG\\src\\entregashg\\Meteo\\";
+    final static String RUTA_FICHERO = "D:\\ACCDAT\\TEMA2SHG\\src\\entregashg\\Meteo";
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         HashMap<String, Integer> listaMeteo = new HashMap<String, Integer>();
         int respuesta = 0;
         String sTexto = " ";
-        String buscarCiudad;
         String sCiudad;
         LocalDate dFecha = LocalDate.now();
         Integer iTempMin;
         Integer iTempMax;
+        String titulo = "CIUDAD     FECHA       TEMP. MIN       TEMP. MAX";
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(RUTA_FICHERO + "meteo.txt"));
-                BufferedReader br = new BufferedReader(new FileReader(RUTA_FICHERO + "meteo.txt"));) {
-
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(RUTA_FICHERO + "\\meteo.txt"));
+                BufferedReader br = new BufferedReader(new FileReader(RUTA_FICHERO + "\\meteo.txt"));) {
+            bw.write(titulo + "\n");
             while (respuesta != 4) {
                 System.out.println("Opciones:\n1. Registrar nueva temperatura\n2. Mostrar historial de registros\n3. Mostrar media de temperatura\n4. Salir");
                 respuesta = entrada.nextInt();
-
                 if (respuesta == 1) {
                     System.out.println("Ciudad: ");
                     sCiudad = entrada.next();
-                    System.out.println("Fecha: " +dFecha);
+                    System.out.println("Fecha: " + dFecha);
                     System.out.println("Temperatura Minima: ");
                     iTempMin = entrada.nextInt();
                     System.out.println("Temperatura Maxima: ");
@@ -52,8 +51,8 @@ public class MeteoSebastian {
                     }
 
                 } else if (respuesta == 2) {
-                    System.out.println("Introduce el nombre del contacto que estás buscando");
-                    buscarCiudad = entrada.next();
+                    System.out.println("Introduce el nombre de la ciudad que estás buscando");
+                    String buscarCiudad = entrada.next();
                     sTexto = br.readLine();
                     while (sTexto != null) {
                         if (sTexto.contains(buscarCiudad)) {
@@ -62,7 +61,21 @@ public class MeteoSebastian {
                         sTexto = br.readLine();
                     }
                 } else if (respuesta == 3) {
-                  
+                    String texto = br.readLine();
+                    double sumaMin = 0;
+                    double sumaMax= 0;
+                    int media = 0;
+
+                    while(texto !=null){
+                        media++;
+                        String[] numero = texto.split(" ");
+                        sumaMin += Double.parseDouble(numero[2]);
+                        sumaMax += Double.parseDouble(numero[3]);
+                        System.out.println(texto);
+                        texto=br.readLine();
+                    }
+                    System.out.println("Media altura = "+sumaMin/media);
+                    System.out.println("Media edad = "+sumaMax/media);
                 }
             }
 

@@ -1,1 +1,3 @@
-Madrid          2022-11-10          10          18
+CIUDAD     FECHA       TEMP. MIN       TEMP. MAX
+Madrid      2022-11-14      2        18
+Barcelona      2022-11-14      2        20

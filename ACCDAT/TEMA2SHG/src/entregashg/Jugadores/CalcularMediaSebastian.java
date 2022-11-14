@@ -7,14 +7,14 @@ import java.io.IOException;
 
 public class CalcularMediaSebastian {
     public static void main(String[] args) {
-        File RutaFichero = new File("D:\\ACCDAT\\TEMA2SHG\\src\\entregashg\\Jugadores\\");
+        File RutaFichero = new File("D:\\ACCDAT\\TEMA2SHG\\src\\entregashg\\Jugadores");
 
         String texto;
         double sumaEdad = 0;
         double sumaAltura= 0;
         int media = 0;
 
-        try (BufferedReader bfIn = new BufferedReader(new FileReader(RutaFichero+"jugadores.txt"))) {
+        try (BufferedReader bfIn = new BufferedReader(new FileReader(RutaFichero+"\\jugadores.txt"))) {
             texto= bfIn.readLine();
 
             while(texto !=null){
@@ -29,6 +29,7 @@ public class CalcularMediaSebastian {
             System.out.println("Media edad = "+sumaEdad/media);
             bfIn.close();
         } catch (IOException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

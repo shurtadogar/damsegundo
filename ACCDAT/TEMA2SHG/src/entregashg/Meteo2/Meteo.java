@@ -1,8 +1,9 @@
-package entregashg.Meteo;
+package entregashg.Meteo2;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Meteo {
+public class Meteo implements Serializable {
     private String sCiudad;
     private LocalDate dFecha;
     private Integer iTempMin;
