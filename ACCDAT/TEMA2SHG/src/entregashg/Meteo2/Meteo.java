@@ -13,11 +13,12 @@ public class Meteo implements Serializable {
 
     }
 
-    public Meteo(String sCiudad, LocalDate dFecha, Integer iTempMin, Integer iTempMax) {
+    public Meteo(String sCiudad, LocalDate dFecha, Integer iTempMax, Integer iTempMin) {
         this.sCiudad = sCiudad;
         this.dFecha = dFecha;
-        this.iTempMin = iTempMin;
         this.iTempMax = iTempMax;
+        this.iTempMin = iTempMin;
+        ;
     }
 
     public String getsCiudad() {
@@ -28,12 +29,12 @@ public class Meteo implements Serializable {
         return dFecha;
     }
 
-    public Integer getiTempMin() {
-        return iTempMin;
-    }
-
     public Integer getiTempMax() {
         return iTempMax;
+    }
+
+    public Integer getiTempMin() {
+        return iTempMin;
     }
 
     public void setsCiudad(String sCiudad) {
@@ -44,17 +45,16 @@ public class Meteo implements Serializable {
         this.dFecha = dFecha;
     }
 
-    public void setiTempMin(Integer iTempMin) {
-        this.iTempMin = iTempMin;
-    }
-
     public void setiTempMax(Integer iTempMax) {
         this.iTempMax = iTempMax;
     }
 
-
+    public void setiTempMin(Integer iTempMin) {
+        this.iTempMin = iTempMin;
+    }
+    
     @Override
     public String toString() {
-        return sCiudad + "      " + dFecha + "      " + iTempMin + "        " + iTempMax;
+        return sCiudad + "      " + dFecha + "      " + iTempMax + "        " + iTempMin;
     } 
 }

@@ -1,35 +1,36 @@
 package entregashg.Agenda;
 
 public class Agenda {
-    private String sNombre;
-    private Integer iNumero;
-    
+    private String NombreContacto;
+    private Integer NumeroTelefono;
+
     public Agenda() {
     }
 
-    public Agenda(String sNombre, Integer iNumero) {
-        this.sNombre = sNombre;
-        this.iNumero = iNumero;
+    public Agenda(String nombreContacto, Integer numeroTelefono) {
+        NombreContacto = nombreContacto;
+        NumeroTelefono = numeroTelefono;
     }
 
-    public String getsNombre() {
-        return sNombre;
+
+    public String getNombreContacto() {
+        return NombreContacto;
     }
 
-    public Integer getiNumero() {
-        return iNumero;
+    public void setNombreContacto(String nombreContacto) {
+        NombreContacto = nombreContacto;
     }
 
-    public void setsNombre(String sNombre) {
-        this.sNombre = sNombre;
+    public int getNumeroTelefono() {
+        return NumeroTelefono;
     }
 
-    public void setiNumero(Integer iNumero) {
-        this.iNumero = iNumero;
+    public void setNumeroTelefono(int numeroTelefono) {
+        NumeroTelefono = numeroTelefono;
     }
 
     @Override
     public String toString() {
-        return  "Nombre: "+sNombre+ " Numero: " +iNumero;
-    }  
+        return  NombreContacto + " " + NumeroTelefono ;
+    }
 }
