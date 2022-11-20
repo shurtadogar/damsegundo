@@ -52,8 +52,9 @@ public class Meteo implements Serializable {
         this.iTempMax = iTempMax;
     }
 
+
     @Override
     public String toString() {
         return sCiudad + "      " + dFecha + "      " + iTempMin + "        " + iTempMax;
-    }
+    } 
 }
